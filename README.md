@@ -1,0 +1,2 @@
+# todo
+small javascript project 
