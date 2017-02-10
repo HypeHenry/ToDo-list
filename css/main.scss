@@ -4,8 +4,6 @@ $thema2    : #957dff;
 body{
   background: #edf0f1;
   padding: 80px 0 0 10px;
-  min-width: 900px;
-
 
 }
 body, input, button{
@@ -95,6 +93,12 @@ header {
   flex-direction: column;
   padding: 15px;
 }
+ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
 
 ul.todo {
   width: 100%;
@@ -176,4 +180,43 @@ ul.todo {
 
     }
   }
+}
+
+ul.todo#completed{
+    position: relative;
+    padding: 60px 0 0 0;
+    left: 1em;
+    opacity: 0.4;
+}
+
+ul.todo#completed:before {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #d8e5e0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+  }
+
+ul.todo#todo:empty:after{
+  content: 'Uw heb niks te gedaan';
+  margin: 40px 0 0 0;
+}
+
+ul.todo#completed:empty:after{
+  content: 'Uw heeft nog geen taken uit te voeren ';
+}
+
+ul.todo#todo:after,
+ul.todo#completed:after{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
 }
